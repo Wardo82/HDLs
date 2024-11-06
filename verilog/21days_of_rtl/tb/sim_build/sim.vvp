@@ -1,0 +1,41 @@
+#! /usr/local/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0-132-gb2f2414f4)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/lib/ivl/v2009.vpi";
+S_0x558bb72a80d0 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_0x558bb72a8260 .scope module, "day1" "day1" 3 3;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 8 "a_i";
+    .port_info 1 /INPUT 8 "b_i";
+    .port_info 2 /INPUT 1 "sel_i";
+    .port_info 3 /OUTPUT 8 "y_o";
+o0x7f0032573018 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x558bb72bd3c0_0 .net "a_i", 7 0, o0x7f0032573018;  0 drivers
+o0x7f0032573048 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x558bb72bb340_0 .net "b_i", 7 0, o0x7f0032573048;  0 drivers
+o0x7f0032573078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x558bb72bae70_0 .net "sel_i", 0 0, o0x7f0032573078;  0 drivers
+v0x558bb72ca3c0_0 .net "y_o", 7 0, L_0x558bb72ca520;  1 drivers
+L_0x558bb72ca520 .functor MUXZ 8, o0x7f0032573048, o0x7f0032573018, o0x7f0032573078, C4<>;
+S_0x558bb72a3130 .scope module, "cocotb_iverilog_dump" "cocotb_iverilog_dump" 4 1;
+ .timescale -9 -12;
+    .scope S_0x558bb72a3130;
+T_0 ;
+    %vpi_call/w 4 3 "$dumpfile", "sim_build/day1.fst" {0 0 0};
+    %vpi_call/w 4 4 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x558bb72a8260 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "/mnt/c/Users/aflored/Documents/Examples/HDLs/systemverilog/21days_of_rtl/tb/../day1_mux.sv";
+    "sim_build/cocotb_iverilog_dump.v";
